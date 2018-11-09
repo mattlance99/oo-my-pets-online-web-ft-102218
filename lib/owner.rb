@@ -79,7 +79,7 @@ attr_reader :species
       end
       pet_array.clear
     end
-
+binding.pry
   end
   
   def list_pets

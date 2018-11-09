@@ -4,11 +4,12 @@ class Owner
 attr_accessor :name, :dog, :pets, :cat, :fish
 attr_reader :species 
 @@owner_count = 0
-@@pets = {:cats => [], :dogs => [], :fishes => []}
+
   def initialize(species)
     @@owner_count  += 1
     @species = species
     @@all << self
+    @pets = {:cats => [], :dogs => [], :fishes => []}
   end
 
   def self.all
@@ -38,35 +39,35 @@ attr_reader :species
   end
   
   def pets 
-    @@pets
+    @pets
   end 
   
   def buy_fish(fish)
-    @@pets[:fishes] << Fish.new(fish)
+    @pets[:fishes] << Fish.new(fish)
   end
   
   def buy_cat(cat)
-    @@pets[:cats] << Cat.new(cat)
+    @pets[:cats] << Cat.new(cat)
   end 
   
   def buy_dog(dog)
-    @@pets[:dogs] << Dog.new(dog)
+    @pets[:dogs] << Dog.new(dog)
   end 
   
   def walk_dogs
-     @@pets[:dogs].each do |dog|
+     @pets[:dogs].each do |dog|
        dog.mood = "happy"
       end
   end
   
     def play_with_cats
-     @@pets[:cats].each do |cat|
+     @pets[:cats].each do |cat|
        cat.mood = "happy"
       end
      end 
   
     def feed_fish
-     @@pets[:fishes].each do |fish|
+     @pets[:fishes].each do |fish|
        fish.mood = "happy"
         end
       end
